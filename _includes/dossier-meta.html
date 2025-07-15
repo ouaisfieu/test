@@ -1,0 +1,11 @@
+<ul class="dossier-meta">
+  {% if page.theme %}
+    <li><strong>Thème :</strong> {{ page.theme }}</li>
+  {% endif %}
+  {% if page.source_data %}
+    <li><strong>Donnée source :</strong> {{ page.source_data }}</li>
+  {% endif %}
+  {% if page.license %}
+    <li><strong>Licence :</strong> {{ page.license }}</li>
+  {% endif %}
+</ul>
