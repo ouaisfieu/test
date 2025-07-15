@@ -3,21 +3,6 @@ main:
   - title: "Accueil"
     url: /
 
-  - title: "Tutoriels"
-    children:
-      - title: "Installer Minimal Mistakes"
-        url: /installer-mm-github-pages/
-      - title: "Comparatif SEO JTD vs MM"
-        url: /comparatif-seo-jtd-vs-mm/
-      - title: "Front‑matter & SEO"
-        url: /front-matter-referencement/
-      - title: "Créer une collection dossiers"
-        url: /creer-collection-dossiers/
-
-  - title: "Citoyenneté"
-    children:
-      - title: "Découvrabilité & Citoyenneté"
-        url: /decouvrabilite-citoyennete/
 
   - title: "Dossiers"
     url: /dossiers/
