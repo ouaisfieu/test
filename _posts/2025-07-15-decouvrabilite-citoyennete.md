@@ -1,6 +1,7 @@
 ---
 permalink: /decouvrabilite-citoyennete/
 layout: single
+classes: wide
 title: "La découvrabilité au service de la citoyenneté"
 date: 2025-07-15
 last_modified_at: 2025-07-15
