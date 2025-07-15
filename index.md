@@ -1,5 +1,6 @@
 ---
 layout: home
+classes: wide
 title: "Minimal Mistakes & Citoyenneté"
 permalink: /
 author_profile: true
