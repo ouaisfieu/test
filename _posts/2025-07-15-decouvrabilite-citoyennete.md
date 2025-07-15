@@ -1,4 +1,5 @@
 ---
+permalink: /decouvrabilite-citoyennete/
 layout: single
 title: "La découvrabilité au service de la citoyenneté"
 date: 2025-07-15
