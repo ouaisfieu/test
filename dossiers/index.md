@@ -7,6 +7,7 @@ toc: false
 
 <p class="notice--primary">Filtrer les dossiers par thème :</p>
 
+{::nomarkdown}
 <select id="theme-filter">
   <option value="all">Tous les thèmes</option>
   {% assign themes = site.dossiers | map: "theme" | uniq | sort %}
@@ -16,6 +17,8 @@ toc: false
     {% endif %}
   {% endfor %}
 </select>
+{:/nomarkdown}
+
 
 <div id="dossier-list">
   {% for dossier in site.dossiers %}
