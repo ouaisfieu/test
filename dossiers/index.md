@@ -3,6 +3,15 @@ layout: collection
 title: "Dossiers citoyens"
 permalink: /dossiers/
 toc: false
+header:
+  show_overlay_excerpt: false
+  overlay_image: /assets/images/og.jpg
+  overlay_filter: 0.25
+  caption: "Espace citoyen"
+  actions:
+    - label: "Documentation officielle"
+      url: "https://mmistakes.github.io/minimal-mistakes/"
+
 ---
 
 <p class="notice--primary">Filtrer les dossiers par&nbsp;thème :</p>
