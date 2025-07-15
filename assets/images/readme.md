@@ -1,4 +1,4 @@
-# 👤 avatar.jpg → image de profil auteur
+## 👤 avatar.jpg → image de profil auteur
 📐 Dimensions recommandées
 Taille recommandée : 400 x 400 px
 
@@ -8,7 +8,7 @@ S’affiche en petit dans la sidebar ou les articles → inutile d’aller au-de
 
 Poids : idéalement < 100 Ko
 
-# 🖼️ og.jpg → image Open Graph (réseaux sociaux, SEO)
+## 🖼️ og.jpg → image Open Graph (réseaux sociaux, SEO)
 📐 Dimensions idéales
 Plateforme	Taille recommandée	Ratio
 Facebook / LinkedIn	1200 x 630 px	1.91:1
@@ -24,14 +24,16 @@ Poids : max 300–500 Ko pour un bon compromis qualité/vitesse (utilise TinyJPG
 Pas de texte trop petit : les miniatures réduisent énormément l’image.
 
 
+## Guide images 
 Voici un guide clair pour t’expliquer les différences entre header, hero, et comment les intégrer dans Minimal Mistakes, avec dimensions et bonnes pratiques.
 
-🧱 Les différents types d’images
-Type d’image	Rôle principal	Affichage dans Minimal Mistakes
-og.jpg	Partage sur réseaux sociaux	Invisible sur le site, mais visible sur Facebook etc.
-avatar.jpg	Profil auteur (sidebar ou article)	Petit format, image carrée
-Hero image	Image d’en-tête d’un article ou d’une page	Visible en haut de l’article (layout single)
-Site header	Image fixe visible sur toutes les pages	En haut du site via la config _config.yml
+| Type d’image    | Rôle principal                                 | Affichage dans Minimal Mistakes                       |
+| --------------- | ---------------------------------------------- | ----------------------------------------------------- |
+| `og.jpg`        | Partage sur réseaux sociaux                    | Invisible sur le site, mais visible sur Facebook etc. |
+| `avatar.jpg`    | Profil auteur (sidebar ou article)             | Petit format, image carrée                            |
+| **Hero image**  | Image d’en-tête d’un **article ou d’une page** | Visible en haut de l’article (layout `single`)        |
+| **Site header** | Image fixe visible sur toutes les pages        | En haut du site via la config `_config.yml`           |
+
 
 🖼️ 1. Hero image (image par article/page)
 Objectif :
