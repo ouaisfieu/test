@@ -11,7 +11,7 @@ header:
   show_overlay_excerpt: false
   overlay_image: /assets/images/og.jpg
   overlay_filter: 0.25
-  caption: "Photo : Unsplash — CC0"
+  caption: "Espace citoyen"
   actions:
     - label: "Documentation officielle"
       url: "https://mmistakes.github.io/minimal-mistakes/"
