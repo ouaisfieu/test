@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "Créer une collection « dossiers » pour vos cas d’étude citoyens"
 date: 2025-07-15
 last_modified_at: 2025-07-15
