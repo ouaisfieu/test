@@ -1,5 +1,6 @@
 ---
 layout: search
+classes: wide
 title: "Recherche"
 permalink: /recherche/
 ---
