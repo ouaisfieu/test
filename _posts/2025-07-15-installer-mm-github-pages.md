@@ -1,4 +1,5 @@
 ---
+classes: wide
 permalink: /installer-mm-github-pages/
 title: "Installer Minimal Mistakes et deployer sur GitHub Pages en 10 minutes"
 date: 2025-07-15
