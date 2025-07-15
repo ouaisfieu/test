@@ -50,7 +50,13 @@ collections:
   posts:
     output: true
     permalink: /:categories/:year/:month/:day/:title/
-
+  dossiers:
+    output: true                 # Jekyll génère une page HTML pour chaque dossier
+    permalink: /dossiers/:path/  # URL courte et propre
+  pages:
+    output: true                 # Jekyll génère une page HTML pour chaque dossier
+    permalink: /pages/:path/  # URL courte et propre
+    
 # Auteur (à compléter dans _data/authors.yml si nécessaire)
 author:
   name: ouaisfi·eu
