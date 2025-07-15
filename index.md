@@ -17,7 +17,7 @@ Ce site a deux objectifs :
 ## 📚 Sommaire du site
 
 - 📘 [Comparatif SEO : Just the Docs vs Minimal Mistakes](/comparatif-seo-jtd-vs-mm/)
-- 🛠️ [Tutoriel pas à pas : Prise en main de Minimal Mistakes](/tutoriel-pratique-mm/)
+- 🛠️ [Tutoriel pas à pas : Prise en main de Minimal Mistakes](/tutoriels/2025/07/15/installer-mm-github-pages/) 
 - 🧭 [La découvrabilité au service de la citoyenneté](/citoyennete-et-decouvrabilite/)
 - 📰 [Articles pédagogiques](/blog/)
 
