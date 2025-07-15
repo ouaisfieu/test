@@ -13,8 +13,7 @@ header:
   overlay_filter: 0.25
   caption: "Photo : Unsplash — CC0"
   actions:
-    - label: "Voir le dépôt starter"
-      url: "https://github.com/mmistakes/mm-github-pages-starter"
+
     - label: "Documentation officielle"
       url: "https://mmistakes.github.io/minimal-mistakes/"
 
