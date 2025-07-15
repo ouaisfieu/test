@@ -1,5 +1,6 @@
 ---
 title: "Comparatif SEO : Just the Docs vs Minimal Mistakes"
+permalink: /comparatif-seo-jtd-vs-mm/
 date: 2025-07-15
 last_modified_at: 2025-07-15
 categories: ["Tutoriels", "SEO"]
