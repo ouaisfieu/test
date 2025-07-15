@@ -8,23 +8,51 @@ toc: false
 <p class="notice--primary">Filtrer les dossiers par thème :</p>
 
 {::nomarkdown}
+{% comment %}
+Supporte à la fois :
+- themes: ["Climat", "Mobilité"]
+- theme: "Climat"
+{% endcomment %}
+{% capture theme_list %}{% endcapture %}
+{% for dossier in site.dossiers %}
+  {% if dossier.themes %}
+    {% for t in dossier.themes %}
+      {% assign theme_list = theme_list | append: t | append: "|" %}
+    {% endfor %}
+  {% elsif dossier.theme %}
+    {% assign theme_list = theme_list | append: dossier.theme | append: "|" %}
+  {% endif %}
+{% endfor %}
+{% assign themes = theme_list | split: "|" | uniq | sort %}
+
 <select id="theme-filter">
   <option value="all">Tous les thèmes</option>
-  {% assign themes = site.dossiers | map: "theme" | uniq | sort %}
   {% for th in themes %}
-    {% if th %}
+    {% if th != "" %}
       <option value="{{ th | slugify }}">{{ th }}</option>
     {% endif %}
   {% endfor %}
 </select>
 {:/nomarkdown}
 
-
 <div id="dossier-list">
   {% for dossier in site.dossiers %}
-    <article class="dossier-item" data-theme="{{ dossier.theme | slugify }}">
+    {% capture sluglist %}{% endcapture %}
+    {% if dossier.themes %}
+      {% for t in dossier.themes %}
+        {% assign sluglist = sluglist | append: t | append: " " %}
+      {% endfor %}
+    {% elsif dossier.theme %}
+      {% assign sluglist = dossier.theme %}
+    {% endif %}
+
+    <article class="dossier-item" data-theme="{{ sluglist | slugify }}">
       <h2><a href="{{ dossier.url | relative_url }}">{{ dossier.title }}</a></h2>
-      {% if dossier.theme %}<p><em>{{ dossier.theme }}</em></p>{% endif %}
+      {% if dossier.themes %}
+        <p><em>{{ dossier.themes | join: ", " }}</em></p>
+      {% elsif dossier.theme %}
+        <p><em>{{ dossier.theme }}</em></p>
+      {% endif %}
       {{ dossier.excerpt }}
     </article>
   {% endfor %}
@@ -33,12 +61,13 @@ toc: false
 <script>
 (function() {
   const select = document.getElementById('theme-filter');
-  const items = document.querySelectorAll('.dossier-item');
+  const items  = document.querySelectorAll('.dossier-item');
 
   function filter() {
     const val = select.value;
     items.forEach(it => {
-      if (val === 'all' || it.dataset.theme === val) {
+      const themes = it.dataset.theme.split(' ');
+      if (val === 'all' || themes.includes(val)) {
         it.style.display = '';
       } else {
         it.style.display = 'none';
