@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "Personnaliser l’apparence : couleurs, typo et mises en page sous Minimal Mistakes"
 date: 2025-07-15
 last_modified_at: 2025-07-15
