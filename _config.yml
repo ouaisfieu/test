@@ -25,6 +25,7 @@ defaults:
     values:
       layout: "single"
       author_profile: true
+      classes: wide
 
   - scope:
       path: ""
@@ -32,6 +33,7 @@ defaults:
     values:
       layout: "page"
       toc: true
+      classes: wide
 
 # SEO & Réseaux sociaux
 seo:
