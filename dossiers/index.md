@@ -8,11 +8,7 @@ toc: false
 <p class="notice--primary">Filtrer les dossiers par thème :</p>
 
 {::nomarkdown}
-{% comment %}
-Supporte à la fois :
-- themes: ["Climat", "Mobilité"]
-- theme: "Climat"
-{% endcomment %}
+{% comment %} Liste unique des thèmes (acceptant theme: ou themes: []) {% endcomment %}
 {% capture theme_list %}{% endcapture %}
 {% for dossier in site.dossiers %}
   {% if dossier.themes %}
@@ -40,13 +36,13 @@ Supporte à la fois :
     {% capture sluglist %}{% endcapture %}
     {% if dossier.themes %}
       {% for t in dossier.themes %}
-        {% assign sluglist = sluglist | append: t | append: " " %}
+        {% capture sluglist %}{{ sluglist }}{{ t | slugify }} {% endcapture %}
       {% endfor %}
     {% elsif dossier.theme %}
-      {% assign sluglist = dossier.theme %}
+      {% capture sluglist %}{{ dossier.theme | slugify }}{% endcapture %}
     {% endif %}
 
-    <article class="dossier-item" data-theme="{{ sluglist | slugify }}">
+    <article class="dossier-item" data-theme="{{ sluglist | strip }}">
       <h2><a href="{{ dossier.url | relative_url }}">{{ dossier.title }}</a></h2>
       {% if dossier.themes %}
         <p><em>{{ dossier.themes | join: ", " }}</em></p>
@@ -74,6 +70,7 @@ Supporte à la fois :
       }
     });
   }
+  filter(); // initial call in case default not 'all'
   select.addEventListener('change', filter);
 })();
 </script>
