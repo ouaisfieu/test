@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 collection: dossiers
 title: "Prototype du site Découvrabilité & Citoyenneté"
 theme: "Test"
