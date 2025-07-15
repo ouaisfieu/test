@@ -1,0 +1,61 @@
+# Identité du site
+title: "Découvrabilité & Citoyenneté"
+description: "Un site construit avec Jekyll + Minimal Mistakes"
+url: "https://ouaisfieu.github.io"  # à adapter à ton vrai pseudo GitHub
+baseurl: "/test"  # mettre "" si le site est à la racine du compte GitHub
+
+# Thème à distance (version recommandée pour GitHub Pages)
+remote_theme: "mmistakes/minimal-mistakes@4.27.1"
+
+# Plugins autorisés sur GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Front-matter par défaut
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author_profile: true
+
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      toc: true
+
+# SEO & Réseaux sociaux
+seo:
+  type: "website"
+  # twitter:
+    # username: ton_handle  # ton identifiant Twitter/X sans le @
+  og_image: /assets/images/og.jpg  # image affichée lors du partage
+
+# Moteur Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Structure des articles
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Auteur (à compléter dans _data/authors.yml si nécessaire)
+author:
+  name: ouaisfieu
+  avatar: "/assets/images/avatar.jpg"
+  bio: "Collectif citoyen"
+
+# Fichiers à ignorer dans le build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
