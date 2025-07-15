@@ -14,6 +14,9 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
+search: true
+lunr_languages: ["fr"]   # optionnel, améliore FR
+
 # Front-matter par défaut
 defaults:
   - scope:
