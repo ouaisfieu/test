@@ -6,6 +6,7 @@ categories: ["Tutoriels"]
 tags: ["jekyll", "minimal-mistakes", "github-pages", "seo", "beginner"]
 author_profile: true
 toc: true
+show_overlay_excerpt: false
 
 header:
   overlay_image: /assets/images/og.jpg
