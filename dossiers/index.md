@@ -5,25 +5,25 @@ permalink: /dossiers/
 toc: false
 ---
 
-<p class="notice--primary">Filtrer les dossiers par thème :</p>
+<p class="notice--primary">Filtrer les dossiers par&nbsp;thème :</p>
 
 {::nomarkdown}
-{% comment %} Liste unique des thèmes (acceptant theme: ou themes: []) {% endcomment %}
-{% capture theme_list %}{% endcapture %}
-{% for dossier in site.dossiers %}
-  {% if dossier.themes %}
-    {% for t in dossier.themes %}
-      {% assign theme_list = theme_list | append: t | append: "|" %}
+{% comment %}Construire la liste unique des thèmes, qu’ils soient dans `theme:` ou `themes:`{% endcomment %}
+{% capture raw_themes %}{% endcapture %}
+{% for d in site.dossiers %}
+  {% if d.themes %}
+    {% for t in d.themes %}
+      {% assign raw_themes = raw_themes | append: t | append: "|" %}
     {% endfor %}
-  {% elsif dossier.theme %}
-    {% assign theme_list = theme_list | append: dossier.theme | append: "|" %}
+  {% elsif d.theme %}
+    {% assign raw_themes = raw_themes | append: d.theme | append: "|" %}
   {% endif %}
 {% endfor %}
-{% assign themes = theme_list | split: "|" | uniq | sort %}
+{% assign theme_array = raw_themes | split: "|" | uniq | sort %}
 
 <select id="theme-filter">
   <option value="all">Tous les thèmes</option>
-  {% for th in themes %}
+  {% for th in theme_array %}
     {% if th != "" %}
       <option value="{{ th | slugify }}">{{ th }}</option>
     {% endif %}
@@ -32,45 +32,41 @@ toc: false
 {:/nomarkdown}
 
 <div id="dossier-list">
-  {% for dossier in site.dossiers %}
-    {% capture sluglist %}{% endcapture %}
-    {% if dossier.themes %}
-      {% for t in dossier.themes %}
-        {% capture sluglist %}{{ sluglist }}{{ t | slugify }} {% endcapture %}
+  {% for d in site.dossiers %}
+    {% comment %}Construire l'attribut data-theme en concaténant les slugs séparés par espace{% endcomment %}
+    {% capture slugs %}{% endcapture %}
+    {% if d.themes %}
+      {% for t in d.themes %}
+        {% capture slugs %}{{ slugs }}{{ t | slugify }} {% endcapture %}
       {% endfor %}
-    {% elsif dossier.theme %}
-      {% capture sluglist %}{{ dossier.theme | slugify }}{% endcapture %}
+    {% elsif d.theme %}
+      {% capture slugs %}{{ d.theme | slugify }}{% endcapture %}
     {% endif %}
-
-    <article class="dossier-item" data-theme="{{ sluglist | strip }}">
-      <h2><a href="{{ dossier.url | relative_url }}">{{ dossier.title }}</a></h2>
-      {% if dossier.themes %}
-        <p><em>{{ dossier.themes | join: ", " }}</em></p>
-      {% elsif dossier.theme %}
-        <p><em>{{ dossier.theme }}</em></p>
+    <article class="dossier-item" data-theme="{{ slugs | strip }}">
+      <h2><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h2>
+      {% if d.themes %}
+        <p><em>{{ d.themes | join: ", " }}</em></p>
+      {% elsif d.theme %}
+        <p><em>{{ d.theme }}</em></p>
       {% endif %}
-      {{ dossier.excerpt }}
+      {{ d.excerpt }}
     </article>
   {% endfor %}
 </div>
 
 <script>
-(function() {
+(function () {
   const select = document.getElementById('theme-filter');
   const items  = document.querySelectorAll('.dossier-item');
 
-  function filter() {
+  function applyFilter() {
     const val = select.value;
     items.forEach(it => {
-      const themes = it.dataset.theme.split(' ');
-      if (val === 'all' || themes.includes(val)) {
-        it.style.display = '';
-      } else {
-        it.style.display = 'none';
-      }
+      const arr = it.dataset.theme.split(' ');
+      it.style.display = (val === 'all' || arr.includes(val)) ? '' : 'none';
     });
   }
-  filter(); // initial call in case default not 'all'
-  select.addEventListener('change', filter);
+  select.addEventListener('change', applyFilter);
+  applyFilter(); // initial load
 })();
 </script>
