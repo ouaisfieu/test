@@ -10,9 +10,9 @@ author_profile: true
 toc: true
 
 header:
-  overlay_image: /assets/images/hero-decouvrabilite-citoyennete.jpg
+  overlay_image: /assets/images/og.jpg
   overlay_filter: 0.25
-  caption: "Photo : Unsplash — CC0"
+  caption: "Espace citoyen"
   show_overlay_excerpt: false
 
 excerpt: "Comprendre comment la découvrabilité des contenus numériques renforce la participation citoyenne, l’accès à l’information et l’empouvoirement collectif."
