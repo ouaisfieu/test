@@ -13,7 +13,6 @@ header:
   overlay_filter: 0.25
   caption: "Photo : Unsplash — CC0"
   actions:
-
     - label: "Documentation officielle"
       url: "https://mmistakes.github.io/minimal-mistakes/"
 
