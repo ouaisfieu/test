@@ -1,0 +1,13 @@
+details.toc-container {
+  margin: 1.5em 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5em;
+  background: #f9f9f9;
+}
+
+details.toc-container summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+}
