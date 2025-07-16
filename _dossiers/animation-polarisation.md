@@ -67,7 +67,7 @@ Une **charte de déontologie** (ex. inclusion numérique) rappelle que l’accom
 
 ---
 
-## 5 ·  Pour ton projet **ouaisfi.eu**  
+## 5 ·  Pour aller plus loin  
 
 1. **Fiche-outil « Animer un débat sensible »** : inclure check-list, canevas de règles de discussion, exemples de reformulation.  
 2. **Mini-MOOC** : capsule vidéo + quiz pour former bénévoles et animateur·rice·s aux obligations légales (décret, code antidiscrimination, RGPD).  
